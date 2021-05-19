@@ -31,10 +31,10 @@ public class LoginActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-//        if(firebaseAuth.getCurrentUser()!=null){
-//            startActivity(new Intent(LoginActivity.this, MainActivity.class));
-//            finish();
-//        }
+        if(firebaseAuth.getCurrentUser()!=null){
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
 
 
         getSupportActionBar().hide();
@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
         btn_reset_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Update later",Toast.LENGTH_SHORT).show();
+               startActivity(new Intent(LoginActivity.this, ResetPassword.class));
             }
         });
 
